@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Product-catalogue by ecararus</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>Product-catalogue</h1>
+          <h2>Spring-boot, mongoDB, AutoValue, AngularJs</h2>
+        </header>
+
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/ecararus/product-catalogue/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/ecararus/product-catalogue/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/ecararus/product-catalogue" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
+          <h1>
+<a id="about" class="anchor" href="#about" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>About:</h1>
+
+<p>Product catalog is self contained application is running on Apache Tomcat/8.0.30 as data store is used mongodb.
+Domain model is aggregated in Customer and Product.</p>
+
+<h2>
+<a id="system-requirements" class="anchor" href="#system-requirements" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>System requirements:</h2>
+
+<ul>
+<li>Java 1.8</li>
+<li>Maven 3.3.3</li>
+<li>Free ports: 27017(mongodb), 8080(apache tomcat)</li>
+</ul>
+
+<h2>
+<a id="deployment-and-test" class="anchor" href="#deployment-and-test" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Deployment and test:</h2>
+
+<ul>
+<li>Step1: Run in command lien&gt; mvn clean package spring-boot:run</li>
+<li>Step2: Add cookie: Run in browser console&gt; document.cookie="customerId=123;";</li>
+<li>Step3: Application: http://localhost:8080/</li>
+<li>Step4: Check Api documentation: http://localhost:8080/swagger-ui.html</li>
+</ul>
+
+<h2>
+<a id="todo" class="anchor" href="#todo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>TODO:</h2>
+
+<ul>
+<li>Finish UI and angular script.</li>
+<li>Integrate with sales microservice for checkout function.</li>
+</ul>
+
+<h2>
+<a id="default-data-set" class="anchor" href="#default-data-set" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Default data set:</h2>
+
+<p>Created only for demo purpose. Later on the proper data store should be created and com.sky.CatalogueAppConfiguration#run should be removed.<br></p>
+
+<p>Products: <br>
+{ "name" : "Arsenal TV" , "category" : "Sport" , "locationId" : "London"} <br>
+{ "name" : "Chelsea TV" , "category" : "Sport" , "locationId" : "London"} <br>
+{ "name" : "Liverpool TV" , "category" : "Sport" , "locationId" : "Liverpool"} <br>
+{ "name" : "Sky News" , "category" : "News"} <br>
+{ "name" : "Sky Sport News" , "category" : "News"} <br></p>
+
+<p>Users mocked:  <br>
+ {"customerId" : "123", "locationId" :  "London"} <br>
+ {"customerId" : "321", "locationId" :  "Liverpool"} <br></p>
+
+<h2>
+<a id="out-of-scope" class="anchor" href="#out-of-scope" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Out of scope:</h2>
+
+<ul>
+<li>Anny eventual consistency issue with CustomerLocationService in case it will be decided to implement as a separate microservice.</li>
+<li>Anny infrastructural configuration.</li>
+</ul>
+
+<h2>
+<a id="convention" class="anchor" href="#convention" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Convention:</h2>
+
+<ul>
+<li>Test names does not contains "test" prefix and should provide as message the purpose of test(will be easy to read in case it is failing).</li>
+<li>Test should have coverage &gt; 70.</li>
+<li>Unit test class will have "Test" postfix.</li>
+<li>Integration test class will have "IT" postfix.</li>
+</ul>
+
+<h2>
+<a id="disclaimer" class="anchor" href="#disclaimer" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>DISCLAIMER:</h2>
+
+<p>Purpose of project is only educational.
+This project should not be used for any commercial purpose.
+This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">http://creativecommons.org/licenses/by-nc-sa/4.0/</a>.</p>
+
+<h2>
+<a id="author" class="anchor" href="#author" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Author:</h2>
+
+<p>Eugeniu Cararus
+<a href="mailto:cararuseugeniu@gmail.com">cararuseugeniu@gmail.com</a></p>
+        </section>
+
+        <footer>
+          Product-catalogue is maintained by <a href="https://github.com/ecararus">ecararus</a><br>
+          This page was generated by <a href="https://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+                  <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-75091731-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+      </div>
+    </div>
+  </body>
+</html>
