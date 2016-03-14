@@ -1,0 +1,6 @@
+.header{border-style: solid; border-width: 1px; height: 100px;}
+.container{height: 300px;}
+.column-left{ float: left; width: 33%; border-style: solid; border-width: 1px; margin:1px; margin-left: 0px; height: 98%;}
+.column-center{ display: inline-block; width: 33%; border-style: solid; border-width: 1px; margin:1px; margin-left: 0px; margin-right: 0px; height: 98%;}
+.column-right{ float: right; width: 33%; border-style: solid; border-width: 1px; margin:1px; margin-right: 0px; height: 98%;}
+.footer{border-style: solid; border-width: 1px; height: 100px;}
