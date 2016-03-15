@@ -12,10 +12,10 @@ Product catalogue is self contained application is running on Apache Tomcat/8.0.
  - Step2: Add cookie: Run in browser console> document.cookie="customerId=123;";
  - Step3: Application: http://localhost:8080/
  - Step4: Check Api documentation: http://localhost:8080/swagger-ui.html
- - Step5: Code coverage: 
-          1.Run > mvn clean verify
-          2.Unit test coverage report product-catalogue/target/site/jacoco-ut/index.html 
-          3.Integration test coverage report product-catalogue/target/site/jacoco-it/index.html 
+ - Step5: Code coverage:<br/> 
+          1.Run > mvn clean verify<br/>
+          2.Unit test coverage report product-catalogue/target/site/jacoco-ut/index.html<br/>
+          3.Integration test coverage report product-catalogue/target/site/jacoco-it/index.html<br> 
           
 ## TODO:
  - Finish UI and angular script or ReactJs.
