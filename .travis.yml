@@ -6,6 +6,5 @@ env:
   - ISOLATED=true
   - DB=mongodb
 
-repo_token: hXXIEIrkyJCvRTA1ekNqF7hRiQrYuvG8C
 after_success:
   - mvn clean test jacoco:report coveralls:report
