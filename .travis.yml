@@ -5,9 +5,5 @@ jdk:
 env:
   - ISOLATED=true
 
-  - IntegrationTests:
-        - after_success:
-              - mvn clean test jacoco:report coveralls:report
-
 after_success:
-  - mvn clean test jacoco:report coveralls:report -DskipTests
+  - mvn clean test jacoco:report coveralls:report 
