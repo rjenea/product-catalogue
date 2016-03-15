@@ -4,7 +4,7 @@ jdk:
   - oraclejdk8
 env:
   - ISOLATED=true
-  - DB=mongodb
+  - ISOLATED=false
 
 after_success:
   - mvn clean test jacoco:report coveralls:report
