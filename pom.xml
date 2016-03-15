@@ -45,6 +45,7 @@
         <jacoco-maven.version>0.7.5.201505241946</jacoco-maven.version>
         <skip.integration.tests>false</skip.integration.tests>
         <skip.unit.tests>false</skip.unit.tests>
+        <coveralls.version>4.1.0</coveralls.version>
 
     </properties>
 
@@ -182,6 +183,14 @@
                 <configuration>
                     <source>${java.version}</source>
                     <target>${java.version}</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.eluder.coveralls</groupId>
+                <artifactId>coveralls-maven-plugin</artifactId>
+                <version>${coveralls.version}</version>
+                <configuration>
+                    <repoToken>hXXIEIrkyJCvRTA1ekNqF7hRiQrYuvG8C</repoToken>
                 </configuration>
             </plugin>
             <plugin>
