@@ -1,4 +1,4 @@
-# About: [![Build Status](https://travis-ci.org/ecararus/product-catalogue.svg?branch=master)](https://travis-ci.org/ecararus/product-catalogue)
+# About: [![Build Status](https://travis-ci.org/ecararus/product-catalogue.svg?branch=master)](https://travis-ci.org/ecararus/product-catalogue) [![Coverage Status](https://coveralls.io/repos/github/ecararus/product-catalogue/badge.svg?branch=master)](https://coveralls.io/github/ecararus/product-catalogue?branch=master)
 
 Product catalogue is self contained application is running on Apache Tomcat/8.0.30 as data store is used mongodb.
 [Entire specification is available in project root folder](https://github.com/ecararus/product-catalogue/blob/master/Product%20Selection%20UT.PDF). 
