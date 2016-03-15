@@ -1,9 +1,13 @@
 package com.sky.catalogue.api;
 
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.sky.catalogue.product.vo.ProductVO;
 import com.sky.CatalogueAppConfiguration;
 import com.sky.catalogue.product.model.Product;
 import com.sky.catalogue.product.repository.ProductRepository;
+import com.sky.test.util.Serializer;
 import org.hamcrest.Matcher;
 import org.junit.Before;
 import org.junit.Test;
@@ -21,6 +25,8 @@ import java.nio.charset.Charset;
 
 import static com.sky.test.util.IsValidProductMatcher.matchesWith;
 import static com.sky.test.util.ProductMother.*;
+import static com.sky.test.util.ProductMother.produceProductArsenalTv;
+import static com.sky.test.util.Serializer.jsonSerializer;
 import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.core.Is.is;
@@ -50,12 +56,13 @@ public class ProductSelectionIT {
                 MediaType.APPLICATION_JSON.getSubtype(),
                 Charset.forName("utf8"));
         this.mockMvc = webAppContextSetup(webApplicationContext).build();
-        prepareTestData();
     }
 
+    @SuppressWarnings("unchecked")
     @Test
     public void addProduct() throws Exception {
-        String skySportNews = "{\"name\":\"GlasgowTV\",\"category\":\"Sport\", \"locationId\":\"Glasgow\"}";
+        prepareTestData();
+        String skySportNews = jsonSerializer(produceProductVOGlasgowTv());
         this.mockMvc.perform(post("/api/catalogue/products")
                 .contentType(contentType)
                 .content(skySportNews))
@@ -69,7 +76,8 @@ public class ProductSelectionIT {
     }
 
     @Test
-    public void shouldHaveValidProducts_ForKnownLocationId() throws Exception {
+    public void shouldHaveValidProducts_ForLondon() throws Exception {
+        prepareTestData();
         mockMvc.perform(get("/api/catalogue/products").cookie(new Cookie("customerId", "123")))
                 .andExpect(content().contentType(contentType))
                 .andExpect(jsonPath("$", hasSize(2)))
@@ -94,7 +102,7 @@ public class ProductSelectionIT {
         Matcher arsenalMatcher = matchesWith(produceProductArsenalTv());
         Matcher liverpoolMatcher = matchesWith(produceProductLiverpoolTv());
         Matcher skyNewsMatcher = matchesWith(produceProductSkyNews());
-        Matcher glasgowMatcher = matchesWith(Product.builder().setCategory("Sport").setName("GlasgowTV").setLocationId("Glasgow").build());
+        Matcher glasgowMatcher = matchesWith(produceProductGlasgowTv());
         return containsInAnyOrder(arsenalMatcher, skyNewsMatcher, liverpoolMatcher, glasgowMatcher);
     }
 }

@@ -12,9 +12,12 @@ import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.Collections;
+
 import static com.sky.test.util.ProductMother.produceProductVOLiverpoolTv;
 import static com.sky.test.util.ProductMother.produceProductVOSkySportNews;
 import static java.util.Arrays.asList;
+import static java.util.Collections.singletonList;
 import static junit.framework.Assert.assertEquals;
 import static org.assertj.core.util.Lists.emptyList;
 import static org.hamcrest.Matchers.empty;
@@ -55,18 +58,19 @@ public class ProductSelectionTest {
     @Test
     public void shouldReturnValidProduct() {
         when(customerLocationService.findLocationId("Alice")).thenReturn("London");
-        when(catalogueService.getProducts("London")).thenReturn(asList(produceProductVOSkySportNews()));
+        when(catalogueService.getProducts("London")).thenReturn(singletonList(produceProductVOSkySportNews()));
         assertThat(testee.findProducts("Alice"), hasItem(produceProductVOSkySportNews()));
         verify(customerLocationService, times(1)).findLocationId("Alice");
         verify(catalogueService, times(1)).getProducts("London");
         verifyNoMoreInteractions(catalogueService, customerLocationService);
     }
 
+    @SuppressWarnings("unchecked")
     @Test
     public void shouldNotCallRepository_WhenCustomerLocationServiceIsNotAvailable() {
         thrown.expect(RuntimeException.class);
         when(customerLocationService.findLocationId("Alice")).thenThrow(RuntimeException.class);
-        when(catalogueService.getProducts(anyString())).thenReturn(asList(produceProductVOSkySportNews()));
+        when(catalogueService.getProducts(anyString())).thenReturn(singletonList(produceProductVOSkySportNews()));
         try {
             assertThat(testee.findProducts("Alice"), hasItem(produceProductVOSkySportNews()));
         } finally {

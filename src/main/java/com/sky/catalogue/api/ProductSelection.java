@@ -1,6 +1,5 @@
 package com.sky.catalogue.api;
 
-import com.google.common.base.Preconditions;
 import com.sky.catalogue.facade.CatalogueService;
 import com.sky.catalogue.product.vo.ProductVO;
 import com.sky.customer.service.CustomerLocationService;
@@ -24,7 +23,6 @@ final class ProductSelection {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ProductSelection.class);
     private final CatalogueService catalogueService;
-
     private final CustomerLocationService customerLocationService;
 
     @Autowired
@@ -38,7 +36,7 @@ final class ProductSelection {
     List<ProductVO> findProducts(
             @ApiParam(value = "Customer id fetched from cookie", required = false)
             @CookieValue("customerId") String customerId) {
-        checkNotNull(customerId,"Customer id is required");
+        checkNotNull(customerId, "Customer id is required");
         String locationId = customerLocationService.findLocationId(customerId);
         return catalogueService.getProducts(locationId);
     }
@@ -47,7 +45,7 @@ final class ProductSelection {
     @RequestMapping(method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
     ProductVO add(@RequestBody @Valid ProductVO productVO) {
-        checkNotNull(productVO,"Product could not be null");
+        checkNotNull(productVO, "Product could not be null");
         return catalogueService.save(productVO);
     }
 

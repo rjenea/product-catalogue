@@ -5,12 +5,15 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.google.auto.value.AutoValue;
 import com.google.common.base.Optional;
+import com.sky.util.ProductVODeserializer;
+import com.sky.util.ProductVOSerializer;
 
 import javax.annotation.Nullable;
 import javax.validation.constraints.NotNull;
 
 @AutoValue
-@JsonDeserialize(builder = AutoValue_ProductVO.Builder.class)
+@JsonDeserialize(builder = AutoValue_ProductVO.Builder.class,using = ProductVODeserializer.class)
+@JsonSerialize(using = ProductVOSerializer.class)
 public abstract class ProductVO {
 
     @NotNull

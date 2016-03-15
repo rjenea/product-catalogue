@@ -14,7 +14,7 @@ import static com.sky.catalogue.product.util.TransformerUtil.transform;
 import static java.util.stream.Collectors.toList;
 
 @Service
-public class ProductServiceImpl implements ProductService {
+public final class ProductServiceImpl implements ProductService {
 
     private final ProductRepository productRepository;
 

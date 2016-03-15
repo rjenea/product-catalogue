@@ -2,6 +2,7 @@ package com.sky.catalogue.product.vo;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.base.Optional;
+import com.sky.test.util.Serializer;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -130,6 +131,21 @@ public class ProductVOTest {
         String json = "{\"name\":\"LiverpoolTV\",\"category\":\"Sport\", \"locationId\":\"Liverpool\"}";
         ProductVO productVO = objectMapper.readValue(json.getBytes(), ProductVO.class);
         assertEquals(productVO, produceProductVOLiverpoolTv());
+    }
+
+    @Test
+    public void shouldBeDeserializable_ForOptionalFields() throws Exception {
+        ObjectMapper objectMapper = new ObjectMapper();
+        String json = "{\"name\":\"SkySportNews\",\"category\":\"News\", \"locationId\":\"null\"}";
+        ProductVO productVO = objectMapper.readValue(json.getBytes(), ProductVO.class);
+        assertEquals(productVO, produceProductVOSkySportNews());
+    }
+
+    @Test
+    public void shouldBeSerializable() throws Exception {
+        String serialized = Serializer.jsonSerializer(produceProductVOLiverpoolTv());
+        String expected = "{\"name\":\"LiverpoolTV\",\"category\":\"Sport\",\"locationId\":\"Liverpool\"}";
+        assertEquals(expected,serialized);
     }
 
 }

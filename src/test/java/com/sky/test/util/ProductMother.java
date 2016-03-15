@@ -28,4 +28,11 @@ public final class ProductMother {
         return ProductVO.builder().setCategory("News").setName("SkySportNews").build();
     }
 
+    public static Product produceProductGlasgowTv() {
+        return Product.builder().setCategory("Sport").setName("GlasgowTV").setLocationId("Glasgow").build();
+    }
+
+    public static ProductVO produceProductVOGlasgowTv() {
+        return ProductVO.builder().setCategory("Sport").setName("GlasgowTV").setLocationId("Glasgow").build();
+    }
 }

@@ -1,5 +1,6 @@
-package com.sky;
+package com.sky.config;
 
+import com.sky.CatalogueAppConfiguration;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.SpringApplicationConfiguration;
