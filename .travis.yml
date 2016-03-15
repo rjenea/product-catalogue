@@ -4,7 +4,10 @@ jdk:
   - oraclejdk8
 env:
   - ISOLATED=true
-  - ISOLATED=false
+
+  - IntegrationTests:
+        - after_success:
+              - mvn clean test jacoco:report coveralls:report
 
 after_success:
-  - mvn clean test jacoco:report coveralls:report
+  - mvn clean test jacoco:report coveralls:report -DskipTests
