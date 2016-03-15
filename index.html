@@ -19,7 +19,7 @@
 
         <header>
           <h1>Product-catalogue</h1>
-          <h2>Spring-boot, mongoDB, AutoValue, AngularJs</h2>
+          <h2>Spring-boot, mongoDB, AutoValue, AngularJs or ReactJs</h2>
         </header>
 
         <section id="downloads" class="clearfix">
@@ -34,8 +34,8 @@
           <h1>
 <a id="about" class="anchor" href="#about" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>About:</h1>
 
-<p>Product catalog is self contained application is running on Apache Tomcat/8.0.30 as data store is used mongodb.
-Domain model is aggregated in Customer and Product.</p>
+<p>Product catalogue is self contained application is running on Apache Tomcat/8.0.30 as data store is used mongodb.
+<a href="https://github.com/ecararus/product-catalogue/blob/master/Product%20Selection%20UT.PDF">Entire specification is available in project root folder</a>. </p>
 
 <h2>
 <a id="system-requirements" class="anchor" href="#system-requirements" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>System requirements:</h2>
@@ -54,20 +54,27 @@ Domain model is aggregated in Customer and Product.</p>
 <li>Step2: Add cookie: Run in browser console&gt; document.cookie="customerId=123;";</li>
 <li>Step3: Application: http://localhost:8080/</li>
 <li>Step4: Check Api documentation: http://localhost:8080/swagger-ui.html</li>
+<li>Step5: Code coverage: 
+      1.Run &gt; mvn clean verify
+      2.Unit test coverage report product-catalogue/target/site/jacoco-ut/index.html 
+      3.Integration test coverage report product-catalogue/target/site/jacoco-it/index.html </li>
 </ul>
 
 <h2>
 <a id="todo" class="anchor" href="#todo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>TODO:</h2>
 
 <ul>
-<li>Finish UI and angular script.</li>
-<li>Integrate with sales microservice for checkout function.</li>
+<li>Finish UI and angular script or ReactJs.</li>
+<li>Integrate with sales microservice for checkout function and with CustomerLocationService for location lookup.</li>
 </ul>
 
 <h2>
 <a id="default-data-set" class="anchor" href="#default-data-set" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Default data set:</h2>
 
-<p>Created only for demo purpose. Later on the proper data store should be created and com.sky.CatalogueAppConfiguration#run should be removed.<br></p>
+<p>Domain model is aggregated in Customer and Product domain objects.</p>
+
+<p>Initial data set is created only for demo purpose. Later when the proper data store will be identified than com.sky.CatalogueAppConfiguration#run should be removed.<br>
+Below is listed default persisted dataset, as well api allow to add more.</p>
 
 <p>Products: <br>
 { "name" : "Arsenal TV" , "category" : "Sport" , "locationId" : "London"} <br>
@@ -76,7 +83,7 @@ Domain model is aggregated in Customer and Product.</p>
 { "name" : "Sky News" , "category" : "News"} <br>
 { "name" : "Sky Sport News" , "category" : "News"} <br></p>
 
-<p>Users mocked:  <br>
+<p>Users and location are mocked so service will be able to identify only:  <br>
  {"customerId" : "123", "locationId" :  "London"} <br>
  {"customerId" : "321", "locationId" :  "Liverpool"} <br></p>
 
