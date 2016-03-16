@@ -32,10 +32,11 @@
 
         <section id="main_content">
           <h1>
-<a id="about-" class="anchor" href="#about-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>About: <a href="https://travis-ci.org/ecararus/product-catalogue"><img src="https://travis-ci.org/ecararus/product-catalogue.svg?branch=master" alt="Build Status"></a>
+<a id="about-product-catalogue---" class="anchor" href="#about-product-catalogue---" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>About <a href="http://ecararus.github.io/product-catalogue">Product-catalogue</a>: <a href="https://travis-ci.org/ecararus/product-catalogue"><img src="https://travis-ci.org/ecararus/product-catalogue.svg?branch=master" alt="Build Status"></a> <a href="https://coveralls.io/github/ecararus/product-catalogue?branch=master"><img src="https://coveralls.io/repos/github/ecararus/product-catalogue/badge.svg?branch=master" alt="Coverage Status"></a> <a href="https://app.review.ninja/ecararus/product-catalogue"><img src="https://app.review.ninja/53860556/badge" alt="ReviewNinja"></a>
 </h1>
 
-<p>Product catalogue is self contained application is running on Apache Tomcat/8.0.30 as data store is used mongodb.
+<p><img src="https://github.com/ecararus/product-catalogue/blob/master/Product%20Selection%20UT.PDF" alt="Documentation">
+Product catalogue is self contained application is running on Apache Tomcat/8.0.30 as data store is used mongodb.
 <a href="https://github.com/ecararus/product-catalogue/blob/master/Product%20Selection%20UT.PDF">Entire specification is available in project root folder</a>. </p>
 
 <h2>
@@ -56,7 +57,7 @@
 <li>Step3: Application: http://localhost:8080/</li>
 <li>Step4: Check Api documentation: http://localhost:8080/swagger-ui.html</li>
 <li>Step5: Code coverage:<br> 
-      1.Run &gt; mvn clean verify<br>
+      1.Run &gt; mvn clean verify / or visit <a href="https://coveralls.io/repos/github/ecararus/product-catalogue/badge.svg?branch=master">Coveralls</a><br>
       2.Unit test coverage report product-catalogue/target/site/jacoco-ut/index.html<br>
       3.Integration test coverage report product-catalogue/target/site/jacoco-it/index.html<br> </li>
 </ul>
@@ -101,7 +102,7 @@ Below is listed default persisted dataset, as well api allow to add more.</p>
 
 <ul>
 <li>Test names does not contains "test" prefix and should provide as message the purpose of test(will be easy to read in case it is failing).</li>
-<li>Test should have coverage &gt; 70.</li>
+<li>Test should have coverage &gt; 70%.</li>
 <li>Unit test class will have "Test" postfix.</li>
 <li>Integration test class will have "IT" postfix.</li>
 </ul>
