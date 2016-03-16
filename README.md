@@ -1,4 +1,4 @@
-# About: [![Build Status](https://travis-ci.org/ecararus/product-catalogue.svg?branch=master)](https://travis-ci.org/ecararus/product-catalogue) [![Coverage Status](https://coveralls.io/repos/github/ecararus/product-catalogue/badge.svg?branch=master)](https://coveralls.io/github/ecararus/product-catalogue?branch=master) [![ReviewNinja](https://app.review.ninja/53860556/badge)](https://app.review.ninja/ecararus/product-catalogue)
+# About [Product-catalogue](http://ecararus.github.io/product-catalogue): [![Build Status](https://travis-ci.org/ecararus/product-catalogue.svg?branch=master)](https://travis-ci.org/ecararus/product-catalogue) [![Coverage Status](https://coveralls.io/repos/github/ecararus/product-catalogue/badge.svg?branch=master)](https://coveralls.io/github/ecararus/product-catalogue?branch=master) [![ReviewNinja](https://app.review.ninja/53860556/badge)](https://app.review.ninja/ecararus/product-catalogue)
 
 Product catalogue is self contained application is running on Apache Tomcat/8.0.30 as data store is used mongodb.
 [Entire specification is available in project root folder](https://github.com/ecararus/product-catalogue/blob/master/Product%20Selection%20UT.PDF). 
@@ -14,7 +14,7 @@ Product catalogue is self contained application is running on Apache Tomcat/8.0.
  - Step3: Application: http://localhost:8080/
  - Step4: Check Api documentation: http://localhost:8080/swagger-ui.html
  - Step5: Code coverage:<br/> 
-          1.Run > mvn clean verify<br/>
+          1.Run > mvn clean verify / or visit [Coveralls](https://coveralls.io/repos/github/ecararus/product-catalogue/badge.svg?branch=master)<br/>
           2.Unit test coverage report product-catalogue/target/site/jacoco-ut/index.html<br/>
           3.Integration test coverage report product-catalogue/target/site/jacoco-it/index.html<br> 
           
@@ -45,7 +45,7 @@ Users and location are mocked so service will be able to identify only:  <br/>
 
 ## Convention:
  - Test names does not contains "test" prefix and should provide as message the purpose of test(will be easy to read in case it is failing).
- - Test should have coverage > 70.
+ - Test should have coverage > 70%.
  - Unit test class will have "Test" postfix.
  - Integration test class will have "IT" postfix.
 
