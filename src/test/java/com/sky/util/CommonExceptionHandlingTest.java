@@ -16,7 +16,7 @@ import static org.mockito.Mockito.*;
 @RunWith(MockitoJUnitRunner.class)
 public class CommonExceptionHandlingTest {
 
-    public static final String ERROR_PAGE_PATH = "/err.html";
+    private static final String ERROR_PAGE_PATH = "/err.html";
 
     @Rule
     public final ExpectedException thrown = ExpectedException.none();
@@ -24,7 +24,7 @@ public class CommonExceptionHandlingTest {
     @Mock
     private HttpServletResponse response;
 
-    private CommonExceptionHandling sut = new CommonExceptionHandling();
+    private final CommonExceptionHandling sut = new CommonExceptionHandling();
 
     @Test
     public void shouldNotAcceptNullParameter() throws Exception {

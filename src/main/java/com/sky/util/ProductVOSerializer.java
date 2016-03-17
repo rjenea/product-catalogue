@@ -13,7 +13,7 @@ import java.io.IOException;
 public final class ProductVOSerializer extends JsonSerializer<ProductVO> {
 
     @Override
-    public void serialize(ProductVO productVO, JsonGenerator jsonGenerator, SerializerProvider serializerProvider) throws IOException, JsonProcessingException {
+    public void serialize(ProductVO productVO, JsonGenerator jsonGenerator, SerializerProvider serializerProvider) throws IOException {
         jsonGenerator.writeStartObject();
         jsonGenerator.writeStringField("name", productVO.getName());
         jsonGenerator.writeStringField("category", productVO.getCategory());

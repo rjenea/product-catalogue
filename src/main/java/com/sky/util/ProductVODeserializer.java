@@ -12,8 +12,9 @@ import java.io.IOException;
 
 public final class ProductVODeserializer extends JsonDeserializer<ProductVO> {
 
+    @SuppressWarnings("DuplicateThrows")
     @Override
-    public ProductVO deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException, JsonProcessingException {
+    public ProductVO deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException {
         ObjectCodec objectCodec = jsonParser.getCodec();
         JsonNode node = objectCodec.readTree(jsonParser);
         return ProductVO.builder()
