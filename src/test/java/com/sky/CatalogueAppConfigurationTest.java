@@ -1,6 +1,8 @@
 package com.sky;
 
 import com.google.common.base.Preconditions;
+import com.mongodb.Mongo;
+import cz.jirutka.spring.embedmongo.EmbeddedMongoBuilder;
 import org.assertj.core.api.Condition;
 import org.junit.After;
 import org.junit.Rule;
@@ -9,11 +11,13 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext;
 import org.springframework.boot.test.OutputCapture;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.Bean;
 import org.springframework.core.env.CommandLinePropertySource;
 import org.springframework.core.env.ConfigurableEnvironment;
 import org.springframework.core.env.PropertySource;
 import org.springframework.core.env.StandardEnvironment;
 
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -77,5 +81,15 @@ public class CatalogueAppConfigurationTest {
                 return false;
             }
         };
+    }
+
+    @Bean
+    public Mongo mongo() throws IOException {
+        System.setProperty("DB.TRACE","true");
+        return new EmbeddedMongoBuilder()
+                .version("2.6.10")
+                .bindIp("127.0.0.1")
+                .port(0)
+                .build();
     }
 }
