@@ -1,5 +1,6 @@
 # About [Product-catalogue](http://ecararus.github.io/product-catalogue): [![Build Status](https://travis-ci.org/ecararus/product-catalogue.svg?branch=master)](https://travis-ci.org/ecararus/product-catalogue) [![Coverage Status](https://coveralls.io/repos/github/ecararus/product-catalogue/badge.svg?branch=master)](https://coveralls.io/github/ecararus/product-catalogue?branch=master) [![Code Climate](https://codeclimate.com/github/ecararus/product-catalogue/badges/gpa.svg)](https://codeclimate.com/github/ecararus/product-catalogue) [![ReviewNinja](https://app.review.ninja/53860556/badge)](https://app.review.ninja/ecararus/product-catalogue) [![Slack Invite Button](https://slack-product-catalogue.herokuapp.com/badge.svg)](https://slack-invite-product-catalogue.herokuapp.com)
 
+
 Product catalogue is self contained application is running on Apache Tomcat/8.0.30 as data store is used mongodb.
 [Entire specification is available in project root folder](https://github.com/ecararus/product-catalogue/blob/master/Product%20Selection%20UT.PDF). 
 
@@ -18,7 +19,7 @@ Product catalogue is self contained application is running on Apache Tomcat/8.0.
           2.Unit test coverage report product-catalogue/target/site/jacoco-ut/index.html<br/>
           3.Integration test coverage report product-catalogue/target/site/jacoco-it/index.html<br> 
           
-## To implement:
+## TODO:
  - Finish UI and angular script or ReactJs.
  - Integrate with sales microservice for checkout function and with CustomerLocationService for location lookup.
 
