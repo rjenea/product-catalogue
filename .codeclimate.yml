@@ -6,7 +6,7 @@ engines:
     enabled: true
     config:
       languages:
-      - ruby
+      - java
       - javascript
       - python
       - php
@@ -24,4 +24,5 @@ ratings:
   - "**.php"
   - "**.py"
   - "**.rb"
+  - "**.java"
 exclude_paths: []
