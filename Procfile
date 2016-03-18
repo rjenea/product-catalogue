@@ -1,1 +1,1 @@
-web:  java -jar ./target/product-catalogue-0.0.1.jar
+web: $JAVA_OPTS -Dserver.port=$PORT java -jar target/*.jar
