@@ -1,1 +1,1 @@
-web:    java -cp target/classes:target/* CatalogueAppConfiguration
+web:  mvn spring-boot:run
