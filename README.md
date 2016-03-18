@@ -9,8 +9,13 @@ Product catalogue is self contained application is running on Apache Tomcat/8.0.
  - Free ports: 27017(mongodb), 8080(apache tomcat)
 
 ## Deployment and test:
- - Step1: Run in command lien> mvn clean package spring-boot:run
- - Step2: Add cookie: Run in browser console> document.cookie="customerId=123;";
+ - Step1: Run in command lien 
+ ``` sh
+    $ mvn clean package spring-boot:run
+ ```
+ - Step2: Add cookie run in browser console> 
+ ```> document.cookie="customerId=123;";
+ ```
  - Step3: Application: http://localhost:8080/
  - Step4: Check Api documentation: http://localhost:8080/swagger-ui.html
  - Step5: Code coverage:<br/> 
@@ -28,16 +33,21 @@ Domain model is aggregated in Customer and Product domain objects.
 Initial data set is created only for demo purpose. Later when the proper data store will be identified than com.sky.CatalogueAppConfiguration#run should be removed.<br/>
 Below is listed default persisted dataset, as well api allow to add more.
 
-Products: <br/>
+```
+Products:
 { "name" : "Arsenal TV" , "category" : "Sport" , "locationId" : "London"} <br/>
 { "name" : "Chelsea TV" , "category" : "Sport" , "locationId" : "London"} <br/>
 { "name" : "Liverpool TV" , "category" : "Sport" , "locationId" : "Liverpool"} <br/>
 { "name" : "Sky News" , "category" : "News"} <br/>
 { "name" : "Sky Sport News" , "category" : "News"} <br/>
+```
 
 Users and location are mocked so service will be able to identify only:  <br/>
+```
+Customer locations:
  {"customerId" : "123", "locationId" :  "London"} <br/>
  {"customerId" : "321", "locationId" :  "Liverpool"} <br/>
+```
 
 ## Out of scope:
  - Anny eventual consistency issue with CustomerLocationService in case it will be decided to implement as a separate microservice.
