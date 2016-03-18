@@ -1,4 +1,4 @@
-package com.sky.config;
+package com.sky;
 
 import com.sky.CatalogueAppConfiguration;
 import org.junit.Test;
