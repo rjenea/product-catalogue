@@ -14,7 +14,8 @@ Product catalogue is self contained application is running on Apache Tomcat/8.0.
     $ mvn clean package spring-boot:run
  ```
  - Step2: Add cookie run in browser console> 
- ```> document.cookie="customerId=123;";
+ ``` sh
+    > document.cookie="customerId=123;";
  ```
  - Step3: Application: http://localhost:8080/
  - Step4: Check Api documentation: http://localhost:8080/swagger-ui.html
