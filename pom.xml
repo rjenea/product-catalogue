@@ -300,7 +300,7 @@
                                     <groupId>com.github.jsimone</groupId>
                                     <artifactId>webapp-runner</artifactId>
                                     <version>8.0.30.2</version>
-                                    <destFileName>webapp-runner.jar</destFileName>
+                                    <destFileName>product-catalogue-0.0.1.jar</destFileName>
                                 </artifactItem>
                             </artifactItems>
                         </configuration>
