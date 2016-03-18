@@ -40,7 +40,7 @@
 
         <maven-enforcer.version>1.4.1</maven-enforcer.version>
         <maven-compiler.version>2.3.2</maven-compiler.version>
-        <maven-dependency.version>2.3.2</maven-dependency.version>
+        <maven-dependency.version>2.3</maven-dependency.version>
         <maven-surefire.version>2.19.1</maven-surefire.version>
         <maven-failsafe.version>2.15</maven-failsafe.version>
         <jacoco-maven.version>0.7.5.201505241946</jacoco-maven.version>
