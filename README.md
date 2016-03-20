@@ -22,7 +22,7 @@ Ui implemented by using bootstrap and angular. Deployment is done throw Codeship
  - Step3: Application: http://localhost:8080/
  - Step4: Check Api documentation: http://localhost:8080/swagger-ui.html
  - Step5: Code coverage:<br/> 
-          1.Run > mvn clean verify / or visit [Coveralls](https://coveralls.io/repos/github/ecararus/product-catalogue/badge.svg?branch=master)<br/>
+          1.Run > mvn clean verify / or visit [Coveralls](https://coveralls.io/github/ecararus/product-catalogue?branch=master)<br/>
           2.Unit test coverage report product-catalogue/target/site/jacoco-ut/index.html<br/>
           3.Integration test coverage report product-catalogue/target/site/jacoco-it/index.html<br> 
           
