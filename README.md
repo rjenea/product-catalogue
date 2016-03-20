@@ -1,21 +1,22 @@
-# About [Product-catalogue](https://product-catalogue-poc.herokuapp.com/): [![Build Status](https://travis-ci.org/ecararus/product-catalogue.svg?branch=master)](https://travis-ci.org/ecararus/product-catalogue) [![Coverage Status](https://coveralls.io/repos/github/ecararus/product-catalogue/badge.svg?branch=master)](https://coveralls.io/github/ecararus/product-catalogue?branch=master) [![Code Climate](https://codeclimate.com/github/ecararus/product-catalogue/badges/gpa.svg)](https://codeclimate.com/github/ecararus/product-catalogue) [ ![Codeship Status for ecararus/product-catalogue](https://codeship.com/projects/9970d200-ce89-0133-ea65-56ac8db24476/status?branch=master)](https://codeship.com/projects/140958) 
- [![ReviewNinja](https://app.review.ninja/53860556/badge)](https://app.review.ninja/ecararus/product-catalogue) [![Slack Invite Button](https://slack-product-catalogue.herokuapp.com/badge.svg)](https://slack-invite-product-catalogue.herokuapp.com)
+# About [Product-catalogue](https://product-catalogue-poc.herokuapp.com/): [![Build Status](https://travis-ci.org/ecararus/product-catalogue.svg?branch=master)](https://travis-ci.org/ecararus/product-catalogue) [![Coverage Status](https://coveralls.io/repos/github/ecararus/product-catalogue/badge.svg?branch=master)](https://coveralls.io/github/ecararus/product-catalogue?branch=master) [![Code Climate](https://codeclimate.com/github/ecararus/product-catalogue/badges/gpa.svg)](https://codeclimate.com/github/ecararus/product-catalogue) [ ![Codeship Status for ecararus/product-catalogue](https://codeship.com/projects/9970d200-ce89-0133-ea65-56ac8db24476/status?branch=master)](https://codeship.com/projects/140958)  [![ReviewNinja](https://app.review.ninja/53860556/badge)](https://app.review.ninja/ecararus/product-catalogue) [![Slack Invite Button](https://slack-product-catalogue.herokuapp.com/badge.svg)](https://slack-invite-product-catalogue.herokuapp.com)
 
 Product catalogue is self contained application is running on Apache Tomcat/8.0.30 as data store is used mongodb.
-[Entire specification is available in project root folder](https://github.com/ecararus/product-catalogue/blob/master/Product%20Selection%20UT.PDF). 
+Ui implemented by using bootstrap and angular. Deployment is done throw Codeship on [heroku's cloud infrastructue](https://product-catalogue-poc.herokuapp.com).
+[Entire specification is available in project root folder](https://github.com/ecararus/product-catalogue/blob/master/Product%20Selection%20UT.PDF).
+
 
 ## System requirements:
  - Java 1.8
  - Maven 3.3.3
  - Free ports: 27017(mongodb), 8080(apache tomcat)
 
-## Deployment and test:
+## Local deployment and testing:
  - Step1: Run in command lien 
  ``` sh
     $ mvn clean package spring-boot:run
  ```
- - Step2: Add cookie run in browser console> 
- ``` sh
+ - Step2: Add cookie run in browser console 
+ ``` 
     > document.cookie="customerId=123;";
  ```
  - Step3: Application: http://localhost:8080/
@@ -26,7 +27,6 @@ Product catalogue is self contained application is running on Apache Tomcat/8.0.
           3.Integration test coverage report product-catalogue/target/site/jacoco-it/index.html<br> 
           
 ## To implement:
- - Finish UI and angular script or ReactJs.
  - Integrate with sales microservice for checkout function and with CustomerLocationService for location lookup.
 
 ## Default data set:
@@ -53,7 +53,7 @@ Customer locations:
 
 ## Out of scope:
  - Anny eventual consistency issue with CustomerLocationService in case it will be decided to implement as a separate microservice.
- - Anny infrastructural configuration.
+ - Anny additionl infrastructural configuration(except heroku's configuration).
 
 ## Convention:
  - Test names does not contains "test" prefix and should provide as message the purpose of test(will be easy to read in case it is failing).
