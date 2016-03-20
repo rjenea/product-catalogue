@@ -1,35 +1,48 @@
 <!doctype html>
-<html ng-app>
+<html lang="en" ng-app="productCatalogue">
 <head>
-    <title>Catalogue</title>
+    <title>Product catalogue</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
-    <script src="js/scripts.js"></script>
 </head>
 <body>
 
 <div class="header">
+</div>
 
+<div class="container-fluid">
+    <div class="row categories content" ng-controller="products">
+        <div class="col-sm-4 bar">
+            <p>Sports</p>
+            <div ng-repeat="sport in products | filter:{category:'Sport'}">
+                <p><input type="checkbox" name="{{sport.name}}" ng-click="updateBasket(sport)" >{{sport.name}}</p>
+            </div>
+        </div>
+        <div class="col-sm-4 bar">
+            <p>News</p>
+            <div ng-repeat="news in products | filter:{category:'News'}">
+                <p><input type="checkbox" name="{{news.name}}" ng-click="updateBasket(sport)" >{{news.name}}</p>
+            </div>
+        </div>
+        <div class="col-sm-4 bar">
+            Basket
+            <br/>
+            <div ng-repeat="products in basket">
+                <p>{{products.name}}</p>
+            </div>
+            <button type="button" class="btn btn-default checkoutbtn" onclick="alert('Please confirm selected itmes')">Checkout
+            </button>
+        </div>
+    </div>
 </div>
-<div class="container" ng-controller="products" ng-cloak >
-    <div class="column-left">
-        <p>{{products.category.sport}}Sports</p>
-        <p><input type="checkbox" name="{{products.name}}" value="{{products.name}}">{{products.name}}Arsenal Tv<br></p>
-        <p><input type="checkbox" name="{{products.name}}" value="{{products.name}}">{{products.name}}Chelsea Tv<br></p>
-    </div>
-    <div class="column-center">
-        <p>{{products.category.news}}News</p>
-        <p><input type="checkbox" name="{{products.name}}" value="{{products.name}}">{{products.name}}SkyNews<br></p>
-        <p><input type="checkbox" name="{{products.name}}" value="{{products.name}}">{{products.name}}SkySport<br></p>
-    </div>
-    <div class="column-right">
-        Basket
-        <br/>
-        <button type="button" onclick="alert('Under construction')">Checkout</button>
-    </div>
-</div>
+
 <div class="footer">
-
 </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="js/scripts.js"></script>
 </body>
 </html>
