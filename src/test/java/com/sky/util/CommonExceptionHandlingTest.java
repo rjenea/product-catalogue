@@ -4,12 +4,12 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
-import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
 import javax.servlet.http.HttpServletResponse;
 
+import static javax.servlet.http.HttpServletResponse.SC_BAD_REQUEST;
 import static junit.framework.Assert.assertEquals;
 import static org.mockito.Mockito.*;
 
@@ -35,14 +35,10 @@ public class CommonExceptionHandlingTest {
 
     @Test
     public void shouldRedirectToErrorPage() throws Exception {
-        //when
-        ArgumentCaptor<String> captor = ArgumentCaptor.forClass(String.class);
-        doNothing().when(response).sendRedirect(captor.capture());
         //given
         sut.error(response);
         //then
-        assertEquals(ERROR_PAGE_PATH, captor.getValue());
-        verify(response, times(1)).sendRedirect(ERROR_PAGE_PATH);
+        verify(response, times(1)).sendError(SC_BAD_REQUEST);
         verifyNoMoreInteractions(response);
     }
 
