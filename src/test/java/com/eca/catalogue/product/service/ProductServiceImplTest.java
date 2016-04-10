@@ -1,9 +1,9 @@
 package com.eca.catalogue.product.service;
 
-import autovalue.shaded.com.google.common.common.collect.Lists;
 import com.eca.catalogue.product.model.Product;
 import com.eca.catalogue.product.repository.ProductRepository;
 import com.eca.catalogue.product.vo.ProductVO;
+import com.google.common.collect.Lists;
 import org.hamcrest.Matcher;
 import org.junit.Rule;
 import org.junit.Test;
